@@ -1,0 +1,140 @@
+[2020-07-19 19:26:02,928] {taskinstance.py:670} INFO - Dependencies all met for <TaskInstance: edmjnl_crawler.schedule_edmjnl_crawler 2020-07-18T16:00:00+00:00 [queued]>
+[2020-07-19 19:26:02,934] {taskinstance.py:670} INFO - Dependencies all met for <TaskInstance: edmjnl_crawler.schedule_edmjnl_crawler 2020-07-18T16:00:00+00:00 [queued]>
+[2020-07-19 19:26:02,934] {taskinstance.py:880} INFO - 
+--------------------------------------------------------------------------------
+[2020-07-19 19:26:02,934] {taskinstance.py:881} INFO - Starting attempt 1 of 1
+[2020-07-19 19:26:02,934] {taskinstance.py:882} INFO - 
+--------------------------------------------------------------------------------
+[2020-07-19 19:26:02,943] {taskinstance.py:901} INFO - Executing <Task(BashOperator): schedule_edmjnl_crawler> on 2020-07-18T16:00:00+00:00
+[2020-07-19 19:26:02,944] {standard_task_runner.py:54} INFO - Started process 22104 to run task
+[2020-07-19 19:26:02,960] {standard_task_runner.py:77} INFO - Running: ['airflow', 'run', 'edmjnl_crawler', 'schedule_edmjnl_crawler', '2020-07-18T16:00:00+00:00', '--job_id', '34', '--pool', 'default_pool', '--raw', '-sd', 'DAGS_FOLDER/dags.py', '--cfg_path', '/tmp/tmpyrexxsd1']
+[2020-07-19 19:26:02,960] {standard_task_runner.py:78} INFO - Job 34: Subtask schedule_edmjnl_crawler
+[2020-07-19 19:26:02,976] {logging_mixin.py:112} INFO - Running %s on host %s <TaskInstance: edmjnl_crawler.schedule_edmjnl_crawler 2020-07-18T16:00:00+00:00 [running]> an
+[2020-07-19 19:26:02,986] {bash_operator.py:113} INFO - Tmp dir root location: 
+ /tmp
+[2020-07-19 19:26:02,987] {bash_operator.py:134} INFO - Temporary script location: /tmp/airflowtmpcb_9gnnu/schedule_edmjnl_crawlerfhfe7n77
+[2020-07-19 19:26:02,987] {bash_operator.py:146} INFO - Running command: cd ~/airflow/edmjnl && scrapy crawl edmjnl_crawl -o file_'2020-07-18T16:00:00+00:00'.csv -t csv
+[2020-07-19 19:26:02,992] {bash_operator.py:153} INFO - Output:
+[2020-07-19 19:26:03,318] {bash_operator.py:157} INFO - /home/antony/.local/lib/python3.8/site-packages/scrapy/commands/__init__.py:129: ScrapyDeprecationWarning: The -t command line option is deprecated in favor of specifying the output format within the -o option, please check the -o option docs for more details
+[2020-07-19 19:26:03,318] {bash_operator.py:157} INFO -   feeds = feed_process_params_from_cli(self.settings, opts.output, opts.output_format)
+[2020-07-19 19:26:03,318] {bash_operator.py:157} INFO - 2020-07-19 19:26:03 [scrapy.utils.log] INFO: Scrapy 2.2.1 started (bot: edmjnl)
+[2020-07-19 19:26:03,325] {bash_operator.py:157} INFO - 2020-07-19 19:26:03 [scrapy.utils.log] INFO: Versions: lxml 4.5.2.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.6.0, w3lib 1.22.0, Twisted 20.3.0, Python 3.8.2 (default, Apr 27 2020, 15:53:34) - [GCC 9.3.0], pyOpenSSL 19.1.0 (OpenSSL 1.1.1f  31 Mar 2020), cryptography 2.8, Platform Linux-5.4.0-40-generic-x86_64-with-glibc2.29
+[2020-07-19 19:26:03,325] {bash_operator.py:157} INFO - 2020-07-19 19:26:03 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.epollreactor.EPollReactor
+[2020-07-19 19:26:03,327] {bash_operator.py:157} INFO - 2020-07-19 19:26:03 [scrapy.crawler] INFO: Overridden settings:
+[2020-07-19 19:26:03,327] {bash_operator.py:157} INFO - {'BOT_NAME': 'edmjnl',
+[2020-07-19 19:26:03,327] {bash_operator.py:157} INFO -  'NEWSPIDER_MODULE': 'edmjnl.spiders',
+[2020-07-19 19:26:03,327] {bash_operator.py:157} INFO -  'ROBOTSTXT_OBEY': True,
+[2020-07-19 19:26:03,327] {bash_operator.py:157} INFO -  'SPIDER_MODULES': ['edmjnl.spiders']}
+[2020-07-19 19:26:03,332] {bash_operator.py:157} INFO - 2020-07-19 19:26:03 [scrapy.extensions.telnet] INFO: Telnet Password: f1f9249b335c7fcf
+[2020-07-19 19:26:03,341] {bash_operator.py:157} INFO - 2020-07-19 19:26:03 [scrapy.middleware] INFO: Enabled extensions:
+[2020-07-19 19:26:03,341] {bash_operator.py:157} INFO - ['scrapy.extensions.corestats.CoreStats',
+[2020-07-19 19:26:03,341] {bash_operator.py:157} INFO -  'scrapy.extensions.telnet.TelnetConsole',
+[2020-07-19 19:26:03,341] {bash_operator.py:157} INFO -  'scrapy.extensions.memusage.MemoryUsage',
+[2020-07-19 19:26:03,341] {bash_operator.py:157} INFO -  'scrapy.extensions.feedexport.FeedExporter',
+[2020-07-19 19:26:03,341] {bash_operator.py:157} INFO -  'scrapy.extensions.logstats.LogStats']
+[2020-07-19 19:26:03,363] {bash_operator.py:157} INFO - 2020-07-19 19:26:03 [scrapy.middleware] INFO: Enabled downloader middlewares:
+[2020-07-19 19:26:03,363] {bash_operator.py:157} INFO - ['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+[2020-07-19 19:26:03,363] {bash_operator.py:157} INFO -  'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+[2020-07-19 19:26:03,363] {bash_operator.py:157} INFO -  'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+[2020-07-19 19:26:03,363] {bash_operator.py:157} INFO -  'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+[2020-07-19 19:26:03,363] {bash_operator.py:157} INFO -  'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+[2020-07-19 19:26:03,363] {bash_operator.py:157} INFO -  'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+[2020-07-19 19:26:03,363] {bash_operator.py:157} INFO -  'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+[2020-07-19 19:26:03,363] {bash_operator.py:157} INFO -  'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+[2020-07-19 19:26:03,363] {bash_operator.py:157} INFO -  'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+[2020-07-19 19:26:03,363] {bash_operator.py:157} INFO -  'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+[2020-07-19 19:26:03,363] {bash_operator.py:157} INFO -  'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+[2020-07-19 19:26:03,363] {bash_operator.py:157} INFO -  'scrapy.downloadermiddlewares.stats.DownloaderStats']
+[2020-07-19 19:26:03,364] {bash_operator.py:157} INFO - 2020-07-19 19:26:03 [scrapy.middleware] INFO: Enabled spider middlewares:
+[2020-07-19 19:26:03,364] {bash_operator.py:157} INFO - ['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+[2020-07-19 19:26:03,364] {bash_operator.py:157} INFO -  'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+[2020-07-19 19:26:03,364] {bash_operator.py:157} INFO -  'scrapy.spidermiddlewares.referer.RefererMiddleware',
+[2020-07-19 19:26:03,364] {bash_operator.py:157} INFO -  'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+[2020-07-19 19:26:03,364] {bash_operator.py:157} INFO -  'scrapy.spidermiddlewares.depth.DepthMiddleware']
+[2020-07-19 19:26:03,364] {bash_operator.py:157} INFO - 2020-07-19 19:26:03 [scrapy.middleware] INFO: Enabled item pipelines:
+[2020-07-19 19:26:03,364] {bash_operator.py:157} INFO - []
+[2020-07-19 19:26:03,364] {bash_operator.py:157} INFO - 2020-07-19 19:26:03 [scrapy.core.engine] INFO: Spider opened
+[2020-07-19 19:26:03,365] {bash_operator.py:157} INFO - 2020-07-19 19:26:03 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+[2020-07-19 19:26:03,366] {bash_operator.py:157} INFO - 2020-07-19 19:26:03 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+[2020-07-19 19:26:03,627] {bash_operator.py:157} INFO - 2020-07-19 19:26:03 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://edmontonjournal.com/robots.txt> (referer: None)
+[2020-07-19 19:26:03,627] {bash_operator.py:157} INFO - 2020-07-19 19:26:03 [protego] DEBUG: Rule at line 1 without any user agent to enforce it on.
+[2020-07-19 19:26:03,760] {bash_operator.py:157} INFO - 2020-07-19 19:26:03 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://edmontonjournal.com> (referer: None)
+[2020-07-19 19:26:03,941] {bash_operator.py:157} INFO - 2020-07-19 19:26:03 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (302) to <GET https://edmontonjournal.com/tag/local-news/> from <GET https://edmontonjournal.com/category/local-news/>
+[2020-07-19 19:26:04,009] {bash_operator.py:157} INFO - 2020-07-19 19:26:04 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://edmontonjournal.com/category/news/local-news/> from <GET https://edmontonjournal.com/tag/local-news/>
+[2020-07-19 19:26:04,096] {bash_operator.py:157} INFO - 2020-07-19 19:26:04 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://edmontonjournal.com/category/news/local-news/> (referer: https://edmontonjournal.com)
+[2020-07-19 19:26:04,190] {bash_operator.py:157} INFO - 2020-07-19 19:26:04 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://edmontonjournal.com/news/local-news/calgary-motorbike-racer-loses-life-after-crash-at-castrol-raceway/wcm/766a7f65-d960-417e-afbb-35123ed2ff34/> from <GET https://edmontonjournal.com/news/local-news/calgary-motorbike-racer-loses-life-after-crash-at-castrol-raceway/wcm/766a7f65-d960-417e-afbb-35123ed2ff34/wcm/766a7f65-d960-417e-afbb-35123ed2ff34/>
+[2020-07-19 19:26:04,208] {bash_operator.py:157} INFO - 2020-07-19 19:26:04 [scrapy.core.scraper] DEBUG: Scraped from <200 https://edmontonjournal.com/category/news/local-news/>
+[2020-07-19 19:26:04,208] {bash_operator.py:157} INFO - {'title': None, 'date': None}
+[2020-07-19 19:26:04,212] {bash_operator.py:157} INFO - 2020-07-19 19:26:04 [scrapy.dupefilters] DEBUG: Filtered duplicate request: <GET https://edmontonjournal.com/category/local-news/> - no more duplicates will be shown (see DUPEFILTER_DEBUG to show all duplicates)
+[2020-07-19 19:26:04,214] {bash_operator.py:157} INFO - 2020-07-19 19:26:04 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (302) to <GET https://edmontonjournal.com/tag/crime/> from <GET https://edmontonjournal.com/category/crime/>
+[2020-07-19 19:26:04,232] {bash_operator.py:157} INFO - 2020-07-19 19:26:04 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://edmontonjournal.com/news/crime/skateboarder-suspected-in-saturday-stabbing-spree-facing-multiple-charges-eps/wcm/9ff21a2a-d53c-431f-9526-74e383b7830b/> (referer: https://edmontonjournal.com)
+[2020-07-19 19:26:04,249] {bash_operator.py:157} INFO - 2020-07-19 19:26:04 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://edmontonjournal.com/news/local-news/multiple-injuries-reported-after-motor-coach-rolls-over-in-jasper-national-park/wcm/b94b1771-6035-49b3-8562-217524334b91/> (referer: https://edmontonjournal.com)
+[2020-07-19 19:26:04,286] {bash_operator.py:157} INFO - 2020-07-19 19:26:04 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://edmontonjournal.com/news/local-news/calgary-motorbike-racer-loses-life-after-crash-at-castrol-raceway/wcm/766a7f65-d960-417e-afbb-35123ed2ff34/> (referer: https://edmontonjournal.com)
+[2020-07-19 19:26:04,288] {bash_operator.py:157} INFO - 2020-07-19 19:26:04 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://edmontonjournal.com/news/local-news/update-from-the-icefields-rcmp-attempting-to-remove-vehicle-for-examination/wcm/e973ab0a-d43a-4c99-a1b1-09c95d11d02a/> (referer: https://edmontonjournal.com)
+[2020-07-19 19:26:04,291] {bash_operator.py:157} INFO - 2020-07-19 19:26:04 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://edmontonjournal.com/news/local-news/pandemic-fatigue-setting-in-says-calgary-infectious-disease-expert/wcm/b15ecb40-c98f-4cad-9f33-f80ea75da9b2/> (referer: https://edmontonjournal.com)
+[2020-07-19 19:26:04,292] {bash_operator.py:157} INFO - 2020-07-19 19:26:04 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://edmontonjournal.com/category/news/crime/> from <GET https://edmontonjournal.com/tag/crime/>
+[2020-07-19 19:26:04,346] {bash_operator.py:157} INFO - 2020-07-19 19:26:04 [scrapy.core.scraper] DEBUG: Scraped from <200 https://edmontonjournal.com/news/crime/skateboarder-suspected-in-saturday-stabbing-spree-facing-multiple-charges-eps/wcm/9ff21a2a-d53c-431f-9526-74e383b7830b/>
+[2020-07-19 19:26:04,346] {bash_operator.py:157} INFO - {'title': 'Skateboarder suspected in Saturday stabbing spree facing multiple charges: EPS', 'date': 'Jul 19, 2020'}
+[2020-07-19 19:26:04,356] {bash_operator.py:157} INFO - 2020-07-19 19:26:04 [scrapy.core.scraper] DEBUG: Scraped from <200 https://edmontonjournal.com/news/local-news/multiple-injuries-reported-after-motor-coach-rolls-over-in-jasper-national-park/wcm/b94b1771-6035-49b3-8562-217524334b91/>
+[2020-07-19 19:26:04,356] {bash_operator.py:157} INFO - {'title': 'Three dead, 14 in critical condition after off-road tour vehicle rolls over in Jasper National Park', 'date': 'Jul 19, 2020'}
+[2020-07-19 19:26:04,361] {bash_operator.py:157} INFO - 2020-07-19 19:26:04 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://edmontonjournal.com/news/one-dead-three-injured-in-atv-crash-near-rocky-mountain-house/wcm/59ea6257-1ce6-482f-b2f4-8da65779dde6/> (referer: https://edmontonjournal.com/category/news/local-news/)
+[2020-07-19 19:26:04,380] {bash_operator.py:157} INFO - 2020-07-19 19:26:04 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://edmontonjournal.com/category/news/crime/> (referer: https://edmontonjournal.com)
+[2020-07-19 19:26:04,400] {bash_operator.py:157} INFO - 2020-07-19 19:26:04 [scrapy.core.scraper] DEBUG: Scraped from <200 https://edmontonjournal.com/news/local-news/calgary-motorbike-racer-loses-life-after-crash-at-castrol-raceway/wcm/766a7f65-d960-417e-afbb-35123ed2ff34/>
+[2020-07-19 19:26:04,400] {bash_operator.py:157} INFO - {'title': 'Motorbike racer, 45, killed in accident at Castrol Raceway near Edmonton', 'date': 'Jul 19, 2020'}
+[2020-07-19 19:26:04,411] {bash_operator.py:157} INFO - 2020-07-19 19:26:04 [scrapy.core.scraper] DEBUG: Scraped from <200 https://edmontonjournal.com/news/local-news/update-from-the-icefields-rcmp-attempting-to-remove-vehicle-for-examination/wcm/e973ab0a-d43a-4c99-a1b1-09c95d11d02a/>
+[2020-07-19 19:26:04,411] {bash_operator.py:157} INFO - {'title': 'Update from the Icefield: Victims in critical condition suffer from head and pelvis injuries, AHS says', 'date': 'Jul 20, 2020'}
+[2020-07-19 19:26:04,417] {bash_operator.py:157} INFO - 2020-07-19 19:26:04 [scrapy.core.scraper] DEBUG: Scraped from <200 https://edmontonjournal.com/news/local-news/pandemic-fatigue-setting-in-says-calgary-infectious-disease-expert/wcm/b15ecb40-c98f-4cad-9f33-f80ea75da9b2/>
+[2020-07-19 19:26:04,418] {bash_operator.py:157} INFO - {'title': "'Pandemic fatigue' setting in, says infectious disease expert", 'date': 'Jul 19, 2020'}
+[2020-07-19 19:26:04,475] {bash_operator.py:157} INFO - 2020-07-19 19:26:04 [scrapy.core.scraper] DEBUG: Scraped from <200 https://edmontonjournal.com/news/one-dead-three-injured-in-atv-crash-near-rocky-mountain-house/wcm/59ea6257-1ce6-482f-b2f4-8da65779dde6/>
+[2020-07-19 19:26:04,475] {bash_operator.py:157} INFO - {'title': 'One dead, three injured in ATV crash near Rocky Mountain House', 'date': 'Jul 18, 2020'}
+[2020-07-19 19:26:04,486] {bash_operator.py:157} INFO - 2020-07-19 19:26:04 [scrapy.core.scraper] DEBUG: Scraped from <200 https://edmontonjournal.com/category/news/crime/>
+[2020-07-19 19:26:04,486] {bash_operator.py:157} INFO - {'title': None, 'date': None}
+[2020-07-19 19:26:04,562] {bash_operator.py:157} INFO - 2020-07-19 19:26:04 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://edmontonjournal.com/news/local-news/sylvan-lake-beach-still-overcrowded-less-crowded-this-weekend-officials-say/wcm/9e4a7ef3-b56e-4d8e-8ce3-aef71e6c12a9/> (referer: https://edmontonjournal.com/category/news/local-news/)
+[2020-07-19 19:26:04,589] {bash_operator.py:157} INFO - 2020-07-19 19:26:04 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://edmontonjournal.com/news/crime/police-warn-about-release-of-sexual-offender/wcm/93f8b35a-4eca-4132-a170-c77cd35b1ad6/> (referer: https://edmontonjournal.com/category/news/crime/)
+[2020-07-19 19:26:04,650] {bash_operator.py:157} INFO - 2020-07-19 19:26:04 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://edmontonjournal.com/news/crime/south-edmonton-home-where-man-died-was-being-rented-on-airbnb-neighbours/wcm/46d3c51b-cb40-42f1-9a54-4f6cccfb9889/> (referer: https://edmontonjournal.com/category/news/crime/)
+[2020-07-19 19:26:04,676] {bash_operator.py:157} INFO - 2020-07-19 19:26:04 [scrapy.core.scraper] DEBUG: Scraped from <200 https://edmontonjournal.com/news/local-news/sylvan-lake-beach-still-overcrowded-less-crowded-this-weekend-officials-say/wcm/9e4a7ef3-b56e-4d8e-8ce3-aef71e6c12a9/>
+[2020-07-19 19:26:04,676] {bash_operator.py:157} INFO - {'title': 'Beachgoers respond to new Sylvan Lake overcrowding measures, officials say', 'date': 'Jul 19, 2020'}
+[2020-07-19 19:26:04,703] {bash_operator.py:157} INFO - 2020-07-19 19:26:04 [scrapy.core.scraper] DEBUG: Scraped from <200 https://edmontonjournal.com/news/crime/police-warn-about-release-of-sexual-offender/wcm/93f8b35a-4eca-4132-a170-c77cd35b1ad6/>
+[2020-07-19 19:26:04,703] {bash_operator.py:157} INFO - {'title': 'Police warn about release of sexual offender', 'date': 'Jul 19, 2020'}
+[2020-07-19 19:26:04,763] {bash_operator.py:157} INFO - 2020-07-19 19:26:04 [scrapy.core.scraper] DEBUG: Scraped from <200 https://edmontonjournal.com/news/crime/south-edmonton-home-where-man-died-was-being-rented-on-airbnb-neighbours/wcm/46d3c51b-cb40-42f1-9a54-4f6cccfb9889/>
+[2020-07-19 19:26:04,763] {bash_operator.py:157} INFO - {'title': 'South Edmonton home where man died was being rented on Airbnb: neighbours', 'date': 'Jul 19, 2020'}
+[2020-07-19 19:26:04,786] {bash_operator.py:157} INFO - 2020-07-19 19:26:04 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://edmontonjournal.com/news/crime/thefts-at-alcanna-liquor-stores-way-down-during-covid-19-pandemic/wcm/3d70be6c-b65c-4689-beab-7b31d71c5c8e/> (referer: https://edmontonjournal.com/category/news/crime/)
+[2020-07-19 19:26:04,883] {bash_operator.py:157} INFO - 2020-07-19 19:26:04 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://edmontonjournal.com/news/crime/police-on-the-hunt-for-skateboarding-suspect-involved-in-stabbing-spree/wcm/2bd73693-b222-41f6-bb93-340ba55c88a2/> (referer: https://edmontonjournal.com/category/news/crime/)
+[2020-07-19 19:26:04,898] {bash_operator.py:157} INFO - 2020-07-19 19:26:04 [scrapy.core.scraper] DEBUG: Scraped from <200 https://edmontonjournal.com/news/crime/thefts-at-alcanna-liquor-stores-way-down-during-covid-19-pandemic/wcm/3d70be6c-b65c-4689-beab-7b31d71c5c8e/>
+[2020-07-19 19:26:04,899] {bash_operator.py:157} INFO - {'title': 'Thefts at Alcanna liquor stores way down during COVID-19 pandemic', 'date': 'Jul 18, 2020'}
+[2020-07-19 19:26:04,991] {bash_operator.py:157} INFO - 2020-07-19 19:26:04 [scrapy.core.scraper] DEBUG: Scraped from <200 https://edmontonjournal.com/news/crime/police-on-the-hunt-for-skateboarding-suspect-involved-in-stabbing-spree/wcm/2bd73693-b222-41f6-bb93-340ba55c88a2/>
+[2020-07-19 19:26:04,992] {bash_operator.py:157} INFO - {'title': 'Update: Police arrest skateboarding suspect allegedly involved in stabbing spree', 'date': 'Jul 19, 2020'}
+[2020-07-19 19:26:04,993] {bash_operator.py:157} INFO - 2020-07-19 19:26:04 [scrapy.core.engine] INFO: Closing spider (finished)
+[2020-07-19 19:26:04,994] {bash_operator.py:157} INFO - 2020-07-19 19:26:04 [scrapy.extensions.feedexport] INFO: Stored csv feed (13 items) in: file_2020-07-18T16:00:00+00:00.csv
+[2020-07-19 19:26:04,994] {bash_operator.py:157} INFO - 2020-07-19 19:26:04 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+[2020-07-19 19:26:04,994] {bash_operator.py:157} INFO - {'downloader/request_bytes': 6831,
+[2020-07-19 19:26:04,994] {bash_operator.py:157} INFO -  'downloader/request_count': 20,
+[2020-07-19 19:26:04,994] {bash_operator.py:157} INFO -  'downloader/request_method_count/GET': 20,
+[2020-07-19 19:26:04,994] {bash_operator.py:157} INFO -  'downloader/response_bytes': 484121,
+[2020-07-19 19:26:04,994] {bash_operator.py:157} INFO -  'downloader/response_count': 20,
+[2020-07-19 19:26:04,994] {bash_operator.py:157} INFO -  'downloader/response_status_count/200': 15,
+[2020-07-19 19:26:04,994] {bash_operator.py:157} INFO -  'downloader/response_status_count/301': 3,
+[2020-07-19 19:26:04,994] {bash_operator.py:157} INFO -  'downloader/response_status_count/302': 2,
+[2020-07-19 19:26:04,994] {bash_operator.py:157} INFO -  'dupefilter/filtered': 6,
+[2020-07-19 19:26:04,995] {bash_operator.py:157} INFO -  'elapsed_time_seconds': 1.628715,
+[2020-07-19 19:26:04,995] {bash_operator.py:157} INFO -  'finish_reason': 'finished',
+[2020-07-19 19:26:04,995] {bash_operator.py:157} INFO -  'finish_time': datetime.datetime(2020, 7, 20, 1, 26, 4, 993906),
+[2020-07-19 19:26:04,995] {bash_operator.py:157} INFO -  'item_scraped_count': 13,
+[2020-07-19 19:26:04,995] {bash_operator.py:157} INFO -  'log_count/DEBUG': 35,
+[2020-07-19 19:26:04,995] {bash_operator.py:157} INFO -  'log_count/INFO': 11,
+[2020-07-19 19:26:04,995] {bash_operator.py:157} INFO -  'memusage/max': 52355072,
+[2020-07-19 19:26:04,995] {bash_operator.py:157} INFO -  'memusage/startup': 52355072,
+[2020-07-19 19:26:04,995] {bash_operator.py:157} INFO -  'request_depth_max': 2,
+[2020-07-19 19:26:04,995] {bash_operator.py:157} INFO -  'response_received_count': 15,
+[2020-07-19 19:26:04,995] {bash_operator.py:157} INFO -  'robotstxt/request_count': 1,
+[2020-07-19 19:26:04,995] {bash_operator.py:157} INFO -  'robotstxt/response_count': 1,
+[2020-07-19 19:26:04,995] {bash_operator.py:157} INFO -  'robotstxt/response_status_count/200': 1,
+[2020-07-19 19:26:04,995] {bash_operator.py:157} INFO -  'scheduler/dequeued': 19,
+[2020-07-19 19:26:04,995] {bash_operator.py:157} INFO -  'scheduler/dequeued/memory': 19,
+[2020-07-19 19:26:04,995] {bash_operator.py:157} INFO -  'scheduler/enqueued': 19,
+[2020-07-19 19:26:04,995] {bash_operator.py:157} INFO -  'scheduler/enqueued/memory': 19,
+[2020-07-19 19:26:04,995] {bash_operator.py:157} INFO -  'start_time': datetime.datetime(2020, 7, 20, 1, 26, 3, 365191)}
+[2020-07-19 19:26:04,995] {bash_operator.py:157} INFO - 2020-07-19 19:26:04 [scrapy.core.engine] INFO: Spider closed (finished)
+[2020-07-19 19:26:05,119] {bash_operator.py:159} INFO - Command exited with return code 0
+[2020-07-19 19:26:05,126] {taskinstance.py:1057} INFO - Marking task as SUCCESS.dag_id=edmjnl_crawler, task_id=schedule_edmjnl_crawler, execution_date=20200718T160000, start_date=20200720T012602, end_date=20200720T012605
+[2020-07-19 19:26:07,925] {local_task_job.py:102} INFO - Task exited with return code 0

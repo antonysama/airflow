@@ -1,0 +1,25 @@
+[2020-07-19 19:59:23,488] {taskinstance.py:670} INFO - Dependencies all met for <TaskInstance: edmjnl_crawler2.schedule_edmjnl_email 2020-07-18T04:00:00+00:00 [queued]>
+[2020-07-19 19:59:23,494] {taskinstance.py:670} INFO - Dependencies all met for <TaskInstance: edmjnl_crawler2.schedule_edmjnl_email 2020-07-18T04:00:00+00:00 [queued]>
+[2020-07-19 19:59:23,494] {taskinstance.py:880} INFO - 
+--------------------------------------------------------------------------------
+[2020-07-19 19:59:23,494] {taskinstance.py:881} INFO - Starting attempt 1 of 1
+[2020-07-19 19:59:23,494] {taskinstance.py:882} INFO - 
+--------------------------------------------------------------------------------
+[2020-07-19 19:59:23,504] {taskinstance.py:901} INFO - Executing <Task(EmailOperator): schedule_edmjnl_email> on 2020-07-18T04:00:00+00:00
+[2020-07-19 19:59:23,506] {standard_task_runner.py:54} INFO - Started process 25730 to run task
+[2020-07-19 19:59:23,531] {standard_task_runner.py:77} INFO - Running: ['airflow', 'run', 'edmjnl_crawler2', 'schedule_edmjnl_email', '2020-07-18T04:00:00+00:00', '--job_id', '117', '--pool', 'default_pool', '--raw', '-sd', 'DAGS_FOLDER/dags.py', '--cfg_path', '/tmp/tmpqx6bkyj3']
+[2020-07-19 19:59:23,532] {standard_task_runner.py:78} INFO - Job 117: Subtask schedule_edmjnl_email
+[2020-07-19 19:59:23,547] {logging_mixin.py:112} INFO - Running %s on host %s <TaskInstance: edmjnl_crawler2.schedule_edmjnl_email 2020-07-18T04:00:00+00:00 [running]> an
+[2020-07-19 19:59:23,558] {taskinstance.py:1150} ERROR - [Errno 2] No such file or directory: '~'
+Traceback (most recent call last):
+  File "/home/antony/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 984, in _run_raw_task
+    result = task_copy.execute(context=context)
+  File "/home/antony/.local/lib/python3.8/site-packages/airflow/operators/email_operator.py", line 76, in execute
+    send_email(self.to, self.subject, self.html_content,
+  File "/home/antony/.local/lib/python3.8/site-packages/airflow/utils/email.py", line 60, in send_email
+    return backend(to, subject, html_content, files=files,
+  File "/home/antony/.local/lib/python3.8/site-packages/airflow/utils/email.py", line 99, in send_email_smtp
+    with open(fname, "rb") as f:
+FileNotFoundError: [Errno 2] No such file or directory: '~'
+[2020-07-19 19:59:23,559] {taskinstance.py:1187} INFO - Marking task as FAILED. dag_id=edmjnl_crawler2, task_id=schedule_edmjnl_email, execution_date=20200718T040000, start_date=20200720T015923, end_date=20200720T015923
+[2020-07-19 19:59:28,488] {local_task_job.py:102} INFO - Task exited with return code 1
